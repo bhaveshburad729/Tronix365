@@ -28,6 +28,7 @@ Built with performance, security, and user experience in mind, the platform feat
     -   CORS & Trusted Host Protection.
     -   SQL Injection Protection via SQLAlchemy.
 -   **Automated Emails**: Sends instant confirmation emails with payment receipts upon successful enrollment.
+-   **Coupon System**: "Chain Reaction" coupon logic where using a code generates a new one for the next student.
 
 ---
 
@@ -99,12 +100,40 @@ VITE_API_URL=http://localhost:8000
 npm run dev
 ```
 
+### 4. Admin Tools (Backend)
+The system includes powerful scripts to manage the event:
+
+**A. Seat Management:**
+Update the total seat count and reset the booked counter.
+```bash
+python update_seats.py
+```
+
+**B. Coupon System (Chain Reaction):**
+Reset all coupons and generate the first code.
+```bash
+python reset_coupons.py
+```
+*   **How it works**:
+    1.  Run the script to get the first code.
+    2.  Give it to a student.
+    3.  When used, the system **automatically generates a new code** and emails it to the admin.
+    4.  Repeat the cycle.
+
 ---
 
 ## 🔒 Security Measures
 -   **Environment Variables**: Sensitive keys are never hardcoded.
 -   **Atomic Transactions**: Prevents race conditions during seat booking.
 -   **Input Validation**: Pydantic schemas ensure data integrity.
+-   **Secure Payments**: Razorpay signature verification.
+
+---
+
+## 🚀 Deployment
+-   **Frontend**: Deploy to Vercel/Netlify.
+-   **Backend**: Deploy to Render/Railway/AWS.
+-   **Database**: Use a managed PostgreSQL instance (e.g., Supabase, Neon).
 
 ---
 
@@ -113,7 +142,7 @@ npm run dev
 *Founder & CEO, Tronix365*
 
 -   📍 **Address**: Tronix365, near Stanza living, behind Datta Mandir, Vadgaon Budruk, Pune, Maharashtra 411041
--   📧 **Email**: shubham.tronix365@gmail.com
+-   📧 **Email**: admin@365.in
 -   📱 **Phone**: +91 88301 53805
 
 ---

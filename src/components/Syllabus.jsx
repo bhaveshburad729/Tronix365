@@ -13,9 +13,9 @@ const Syllabus = () => {
                 <div className="bg-tronix-dark/50 p-6 rounded-xl border border-tronix-secondary/30">
                     <h3 className="text-2xl font-bold mb-4 pb-2 border-b border-tronix-secondary/50 text-tronix-secondary">Core Embedded Systems</h3>
                     <ul className="space-y-2 text-gray-300">
-                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Microcontrollers: Arduino (IDE & Programming), ESP32, 8051, Raspberry Pi</li>
-                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Protocols: SPI, UART (Serial Comm), I2C</li>
-                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Networking Protocols: HTTP & HTTPS</li>
+                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Microcontrollers: Arduino , PIC Microcontroller, ESP32, 8051, Raspberry Pi , STM32 etc...</li>
+                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Protocols: SPI, UART (Serial Comm), I2C etc...</li>
+                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Networking Protocols: HTTP & HTTPS etc...</li>
                         <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Real-World Implementation: Hands-on from soldering to final product assembly.</li>
                     </ul>
                 </div>
@@ -24,9 +24,9 @@ const Syllabus = () => {
                 <div className="bg-tronix-dark/50 p-6 rounded-xl border border-tronix-secondary/30">
                     <h3 className="text-2xl font-bold mb-4 pb-2 border-b border-tronix-secondary/50 text-tronix-secondary">Sensors, Actuators & IoT</h3>
                     <ul className="space-y-2 text-gray-300">
-                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Key Sensors: IR, Ultrasonic, PIR, ECG, Touch, LDR, PZEM (Energy Monitoring)</li>
-                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Motors: Servo, DC Motors, Stepper Motors (MG995)</li>
-                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Advanced IoT: Connecting devices to the cloud and web platforms.</li>
+                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Key Sensors: IR, Ultrasonic, PIR, ECG, Touch, LDR, PZEM , Gas , Sound Sensor etc...</li>
+                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Motors: Servo, DC Motors, Stepper Motors , BLDC Motor etc...</li>
+                        <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Advanced IoT: Connecting devices to the cloud and web platforms etc...</li>
                         <li className="flex items-start"><span className="text-tronix-primary mr-3 text-xl">&raquo;</span> Web Integration: Displaying sensor data onto a live website.</li>
                     </ul>
                 </div>

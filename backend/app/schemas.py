@@ -12,7 +12,7 @@ class UserBase(BaseModel):
     message: Optional[str] = None
 
 class UserCreate(UserBase):
-    pass
+    coupon_code: Optional[str] = None
 
 class UserResponse(UserBase):
     id: int

@@ -30,9 +30,9 @@ def get_seats(db: Session = Depends(get_db)):
 async def seat_stream(db: Session = Depends(get_db)):
     async def event_generator():
         while True:
-            # Create a new session for each check to ensure fresh data
-            # In a real production app with high load, we'd use a pub/sub system (Redis)
-            # instead of polling the DB. For this scale, polling is acceptable.
+            # Ensure we get fresh data from the DB
+            db.expire_all()
+            
             seat = db.query(Seat).first()
             if seat:
                 data = {
