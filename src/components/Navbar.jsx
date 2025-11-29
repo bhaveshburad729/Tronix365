@@ -6,8 +6,9 @@ const Navbar = () => {
     return (
         <header className="sticky top-0 z-50 bg-tronix-dark/90 backdrop-blur-sm shadow-lg shadow-tronix-primary/10">
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                <a href="#" className="text-3xl font-bold text-tronix-primary animate-pulseFade">
-                    Tronix365<span className="text-tronix-secondary">.</span>
+                <a href="#" className="flex items-center gap-2 text-3xl font-bold text-tronix-primary animate-pulseFade">
+                    <img src="/tronix365svg.svg" alt="Tronix365 Logo" className="h-10 w-10" />
+                    <span>Tronix365<span className="text-tronix-secondary">.</span></span>
                 </a>
                 <div className="hidden md:flex space-x-8 text-lg">
                     <a href="#internship" className="hover:text-tronix-primary transition duration-300">Internship</a>

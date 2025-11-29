@@ -17,11 +17,28 @@ const About = () => {
                 </div>
                 <div className="p-6 bg-tronix-dark/50 rounded-xl shadow-2xl shadow-tronix-secondary/20">
                     <h3 className="text-3xl font-bold text-tronix-primary mb-4">Our Commitment: Skill Mastery</h3>
-                    <ul className="space-y-3 text-gray-400 text-base">
-                        <li className="flex items-center"><span className="text-tronix-secondary mr-3">&#x27A4;</span> Sensor & Actuator Expertise</li>
-                        <li className="flex items-center"><span className="text-tronix-secondary mr-3">&#x27A4;</span> Real-World Industrial Projects</li>
-                        <li className="flex items-center"><span className="text-tronix-secondary mr-3">&#x27A4;</span> Comprehensive Engineering Solutions</li>
-                    </ul>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-gray-300 text-lg">
+                        <div className="space-y-2">
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Embedded Systems Programming</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Sensor Integration</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Motor & Actuator Control</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> IoT Development</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Communication Protocols</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Robotics & Automation</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> PCB Designing</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> PCB Fabrication</div>
+                        </div>
+                        <div className="space-y-2">
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Soldering & Hardware Assembly</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Product Development Lifecycle</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Real-Time Data Processing</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Industrial Project Exposure</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Technical Documentation</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Mobile & Web Integration</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Cloud Connectivity</div>
+                            <div className="flex items-center"><span className="text-tronix-secondary mr-2">&#x27A4;</span> Career & Placement Skills</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

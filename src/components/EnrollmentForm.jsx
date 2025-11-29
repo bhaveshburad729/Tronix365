@@ -24,7 +24,8 @@ const EnrollmentForm = ({ onRegisterSuccess }) => {
         setError('');
 
         try {
-            const response = await axios.post('http://localhost:8000/api/register', formData);
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+            const response = await axios.post(`${apiUrl}/api/register`, formData);
             onRegisterSuccess(response.data);
         } catch (err) {
             setError(err.response?.data?.detail || 'Registration failed. Please try again.');
@@ -91,7 +92,7 @@ const EnrollmentForm = ({ onRegisterSuccess }) => {
                         className="mt-1 block w-full px-4 py-3 bg-tronix-dark border border-gray-600 rounded-lg text-white focus:ring-tronix-primary focus:border-tronix-primary transition duration-200"
                     />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label htmlFor="branch" className="block text-sm font-medium text-gray-300">Branch</label>
                         <input

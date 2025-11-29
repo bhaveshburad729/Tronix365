@@ -173,7 +173,8 @@ activemq-data/
 *.sage.py
 
 # Environments
-.env
+# .env
+# .env.local
 .envrc
 .venv
 env/
@@ -308,8 +309,8 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-.env
-.env.*
+# .env
+# .env.*
 !.env.example
 
 # parcel-bundler cache (https://parceljs.org/)

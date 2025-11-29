@@ -11,7 +11,12 @@ def register_user(user: UserCreate, db: Session = Depends(get_db)):
     # Check if email exists
     db_user = db.query(User).filter(User.email == user.email).first()
     if db_user:
-        raise HTTPException(status_code=400, detail="Email already registered")
+        if db_user.payment_status == "success":
+            raise HTTPException(status_code=400, detail="Email already registered and paid")
+        else:
+            # If payment is pending or failed, delete the old record to allow re-registration
+            db.delete(db_user)
+            db.commit()
     
     # Determine amount based on early bird availability
     seat = db.query(Seat).first()
@@ -23,9 +28,8 @@ def register_user(user: UserCreate, db: Session = Depends(get_db)):
         db.refresh(seat)
     
     amount = 10000
-    # Early bird logic removed as per request
-    # if seat.early_bird_taken < seat.early_bird_seats:
-    #     amount = 6000
+    if seat.early_bird_taken < seat.early_bird_seats:
+        amount = 6000
     
     new_user = User(
         name=user.name,
