@@ -37,25 +37,10 @@ const Pricing = () => {
             </div>
 
             <div className="text-center mt-12">
-                <a href="#contact" className="inline-block py-4 px-12 bg-tronix-secondary text-white font-extrabold text-xl rounded-full uppercase tracking-wider transition-all duration-300 shadow-xl hover:shadow-tronix-secondary/50 hover:bg-[#a352ff]">
+                <a href="#enroll" className="inline-block py-4 px-12 bg-tronix-secondary text-white font-extrabold text-xl rounded-full uppercase tracking-wider transition-all duration-300 shadow-xl hover:shadow-tronix-secondary/50 hover:bg-[#a352ff]">
                     Enroll Now & Pay ₹10,000
                 </a>
                 <p className="text-sm mt-4 text-gray-400">Contact us immediately to secure the ₹6,000 early bird slot!</p>
-            </div>
-
-            {/* Terms and Conditions (Brief) */}
-            <div id="terms" className="mt-20 max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-8 text-white tracking-tight">
-                    Terms & <span className="text-tronix-primary">Conditions</span>
-                </h2>
-                <div className="bg-tronix-dark/50 p-6 rounded-xl border border-gray-700">
-                    <ul className="text-gray-400 space-y-3 text-sm list-disc list-inside">
-                        <li>Fee Payment: All program charges (₹10,000 or ₹6,000 Early Bird) are payable one time in full upon enrollment confirmation.</li>
-                        <li>Duration: The internship is a fixed 40-day, course-based program starting on December 22nd.</li>
-                        <li>Eligibility: Open to students interested in Robotics, Embedded Systems, and IoT.</li>
-                        <li>Support: College Project Support and Placement Guidance are advisory and supportive in nature, focusing on skill development and resume building.</li>
-                    </ul>
-                </div>
             </div>
         </section>
     );
