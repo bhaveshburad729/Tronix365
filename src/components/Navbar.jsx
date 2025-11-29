@@ -3,12 +3,19 @@ import React, { useState } from 'react';
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
         <header className="sticky top-0 z-50 bg-tronix-dark/90 backdrop-blur-sm shadow-lg shadow-tronix-primary/10">
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                <a href="#" className="text-3xl font-bold text-tronix-primary animate-pulseFade">
-                    Tronix365<span className="text-tronix-secondary">.</span>
-                </a>
+                <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer" onClick={scrollToTop}>
+                    <img src="/tronix365_logo.png" alt="Tronix365 Logo" className="h-10 w-auto" />
+                    <span className="font-bold text-2xl tracking-tighter text-white">
+                        Tronix<span className="text-tronix-primary">365</span>
+                    </span>
+                </div>
                 <div className="hidden md:flex space-x-8 text-lg">
                     <a href="#internship" className="hover:text-tronix-primary transition duration-300">Internship</a>
                     <a href="#syllabus" className="hover:text-tronix-primary transition duration-300">Syllabus</a>

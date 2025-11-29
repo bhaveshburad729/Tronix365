@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, DateTime
+from sqlalchemy import Column, Integer, String, Text, DateTime, Boolean, ForeignKey
 from datetime import datetime
 from ..database import Base
 
@@ -32,3 +32,11 @@ class Seat(Base):
     early_bird_seats = Column(Integer, default=10)
     early_bird_taken = Column(Integer, default=0)
     last_updated = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+class Coupon(Base):
+    __tablename__ = "coupons"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    code = Column(String(50), unique=True, index=True)
+    is_used = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=datetime.utcnow)

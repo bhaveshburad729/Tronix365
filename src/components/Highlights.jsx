@@ -17,7 +17,7 @@ const Highlights = () => {
                 <div className="p-6 rounded-xl bg-tronix-dark border border-tronix-secondary/30 text-center syllabus-card">
                     <div className="text-5xl text-tronix-primary mb-4">🛠️</div>
                     <h3 className="text-xl font-bold mb-2">End-to-End PCB Design</h3>
-                    <p className="text-gray-400 text-sm">Master PCB designing in Proteus, followed by heat press, etching, tinning, component mounting, and masking.</p>
+                    <p className="text-gray-400 text-sm">Master PCB designing & PCB Fabrication using screen printing & heat press, etching, tinning, component mounting, and masking.</p>
                 </div>
                 {/* Highlight Card 3 */}
                 <div className="p-6 rounded-xl bg-tronix-dark border border-tronix-secondary/30 text-center syllabus-card">

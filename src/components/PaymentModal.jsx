@@ -11,8 +11,10 @@ const PaymentModal = ({ user, onClose }) => {
         setLoading(true);
         setError('');
         try {
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
             // 1. Create Order
-            const orderResponse = await axios.post('http://localhost:8000/api/payment/create', {
+            const orderResponse = await axios.post(`${apiUrl}/api/payment/create`, {
                 registration_id: user.id,
                 amount: user.amount
             });
@@ -30,7 +32,7 @@ const PaymentModal = ({ user, onClose }) => {
                 handler: async function (response) {
                     try {
                         // 3. Verify Payment
-                        await axios.post('http://localhost:8000/api/payment/verify', {
+                        await axios.post(`${apiUrl}/api/payment/verify`, {
                             razorpay_order_id: response.razorpay_order_id,
                             razorpay_payment_id: response.razorpay_payment_id,
                             razorpay_signature: response.razorpay_signature

@@ -9,7 +9,9 @@ const EnrollmentForm = ({ onRegisterSuccess }) => {
         college: '',
         branch: '',
         year: '',
-        message: ''
+
+        message: '',
+        couponCode: ''
     });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -24,8 +26,21 @@ const EnrollmentForm = ({ onRegisterSuccess }) => {
         setError('');
 
         try {
-            const response = await axios.post('http://localhost:8000/api/register', formData);
-            onRegisterSuccess(response.data);
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+            // Send couponCode in the payload (UserCreate schema needs to match)
+            const payload = {
+                ...formData,
+                coupon_code: formData.couponCode || null
+            };
+            const response = await axios.post(`${apiUrl}/api/register`, payload);
+
+            if (response.data.amount === 0) {
+                // Free registration successful
+                alert("Coupon Applied! Registration Successful.");
+                window.location.href = "/success"; // Redirect directly to success
+            } else {
+                onRegisterSuccess(response.data);
+            }
         } catch (err) {
             setError(err.response?.data?.detail || 'Registration failed. Please try again.');
         } finally {
@@ -91,7 +106,7 @@ const EnrollmentForm = ({ onRegisterSuccess }) => {
                         className="mt-1 block w-full px-4 py-3 bg-tronix-dark border border-gray-600 rounded-lg text-white focus:ring-tronix-primary focus:border-tronix-primary transition duration-200"
                     />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label htmlFor="branch" className="block text-sm font-medium text-gray-300">Branch</label>
                         <input
@@ -135,6 +150,20 @@ const EnrollmentForm = ({ onRegisterSuccess }) => {
                         placeholder="Tell us about your background or any questions you have."
                         className="mt-1 block w-full px-4 py-3 bg-tronix-dark border border-gray-600 rounded-lg text-white focus:ring-tronix-primary focus:border-tronix-primary transition duration-200"
                     ></textarea>
+                </div>
+
+                <div>
+                    <label htmlFor="couponCode" className="block text-sm font-medium text-tronix-secondary">Have a Coupon Code?</label>
+                    <input
+                        type="text"
+                        id="couponCode"
+                        name="couponCode"
+                        value={formData.couponCode}
+                        onChange={handleChange}
+                        placeholder="Enter Code (e.g. TRONIX-XY92)"
+                        className="mt-1 block w-full px-4 py-3 bg-tronix-dark border border-tronix-secondary/50 rounded-lg text-white focus:ring-tronix-secondary focus:border-tronix-secondary transition duration-200"
+                    />
+                    <p className="text-xs text-gray-500 mt-1">If valid, your registration will be free.</p>
                 </div>
 
                 {error && (

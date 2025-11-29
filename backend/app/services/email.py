@@ -62,3 +62,41 @@ def send_confirmation_email(to_email: str, name: str, amount: int, payment_id: s
         print(f"Email sent to {to_email}")
     except Exception as e:
         print(f"Failed to send email: {e}")
+
+def send_admin_coupon_email(new_code: str):
+    smtp_host = os.getenv("SMTP_HOST")
+    smtp_port = int(os.getenv("SMTP_PORT", "587"))
+    smtp_user = os.getenv("SMTP_USER")
+    smtp_password = os.getenv("SMTP_PASSWORD")
+    
+    if not all([smtp_host, smtp_port, smtp_user, smtp_password]):
+        print("SMTP credentials not set. Skipping admin email.")
+        return
+
+    subject = "New Coupon Code Generated"
+    body = f"""
+    <html>
+        <body>
+            <h2>New Coupon Code Generated</h2>
+            <p>A coupon was just used. Here is the new code for the next student:</p>
+            <h1 style="color: #00f7ff; background: #111; padding: 10px; display: inline-block;">{new_code}</h1>
+            <p>Share this code with the next student.</p>
+        </body>
+    </html>
+    """
+    
+    msg = MIMEMultipart()
+    msg['From'] = smtp_user
+    msg['To'] = smtp_user  # Send to self (Admin)
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'html'))
+    
+    try:
+        server = smtplib.SMTP(smtp_host, smtp_port)
+        server.starttls()
+        server.login(smtp_user, smtp_password)
+        server.send_message(msg)
+        server.quit()
+        print(f"Admin coupon email sent to {smtp_user}")
+    except Exception as e:
+        print(f"Failed to send admin email: {e}")

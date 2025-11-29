@@ -28,7 +28,8 @@ const Hero = () => {
 
     useEffect(() => {
         // SSE connection for real-time seat updates
-        const eventSource = new EventSource('http://localhost:8000/api/seats/stream');
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+        const eventSource = new EventSource(`${apiUrl}/api/seats/stream`);
 
         eventSource.onmessage = (event) => {
             const data = JSON.parse(event.data);
@@ -98,7 +99,7 @@ const Hero = () => {
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                         </span>
                         <span className="text-red-400 font-bold tracking-wide">
-                            Only {seats.available_seats} Seats Left!
+                            Only {seats.available_seats} Seats of {seats.total_seats} Left!
                         </span>
                     </div>
                 </div>
