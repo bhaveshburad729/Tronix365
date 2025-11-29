@@ -6,6 +6,9 @@ class UserBase(BaseModel):
     name: str
     email: EmailStr
     phone: str
+    college: Optional[str] = None
+    branch: Optional[str] = None
+    year: Optional[str] = None
     message: Optional[str] = None
 
 class UserCreate(UserBase):

@@ -23,13 +23,17 @@ def register_user(user: UserCreate, db: Session = Depends(get_db)):
         db.refresh(seat)
     
     amount = 10000
-    if seat.early_bird_taken < seat.early_bird_seats:
-        amount = 6000
+    # Early bird logic removed as per request
+    # if seat.early_bird_taken < seat.early_bird_seats:
+    #     amount = 6000
     
     new_user = User(
         name=user.name,
         email=user.email,
         phone=user.phone,
+        college=user.college,
+        branch=user.branch,
+        year=user.year,
         message=user.message,
         amount=amount
     )
