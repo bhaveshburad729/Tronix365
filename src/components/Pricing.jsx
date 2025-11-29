@@ -17,22 +17,11 @@ const Pricing = () => {
                 </div>
 
                 {/* Plan 2: Discounted Price (Recommended) */}
-                <div className="p-8 rounded-xl bg-tronix-dark border-4 border-tronix-primary text-center shadow-lg shadow-tronix-primary/40 transition-all duration-500 scale-105">
+                <div className="p-8 rounded-xl bg-tronix-dark border-4 border-tronix-primary text-center shadow-lg shadow-tronix-primary/40 transition-all duration-500 scale-105 col-span-2 md:col-span-1 md:col-start-2">
                     <p className="text-lg uppercase font-semibold text-tronix-primary mb-2 animate-pulse">Special Discount</p>
                     <p className="text-5xl font-extrabold text-white mb-4">₹10,000</p>
                     <p className="text-sm text-gray-300">40-Day Full Program Access</p>
                     <p className="text-xs mt-4 text-tronix-primary font-bold">(Save ₹6,800 Instantly)</p>
-                </div>
-
-                {/* Plan 3: Early Bird Offer (The Hook) */}
-                <div className="relative p-8 rounded-xl bg-tronix-secondary/20 border-4 border-tronix-secondary text-center shadow-lg shadow-tronix-secondary/50 transition-all duration-500">
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">
-                        Limited 10 Seats!
-                    </div>
-                    <p className="text-lg uppercase font-semibold text-tronix-secondary mb-2">Super Early Bird</p>
-                    <p className="text-5xl font-extrabold text-tronix-secondary mb-4">₹6,000</p>
-                    <p className="text-sm text-gray-300">For the First 10 Enrollments Only</p>
-                    <p className="text-xs mt-4 text-red-400 font-bold">FEES PAYABLE ONE TIME ONLY</p>
                 </div>
             </div>
 

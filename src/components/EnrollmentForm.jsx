@@ -6,6 +6,9 @@ const EnrollmentForm = ({ onRegisterSuccess }) => {
         name: '',
         email: '',
         phone: '',
+        college: '',
+        branch: '',
+        year: '',
         message: ''
     });
     const [loading, setLoading] = useState(false);
@@ -74,6 +77,52 @@ const EnrollmentForm = ({ onRegisterSuccess }) => {
                         required
                         className="mt-1 block w-full px-4 py-3 bg-tronix-dark border border-gray-600 rounded-lg text-white focus:ring-tronix-primary focus:border-tronix-primary transition duration-200"
                     />
+                </div>
+                <div>
+                    <label htmlFor="college" className="block text-sm font-medium text-gray-300">College Name</label>
+                    <input
+                        type="text"
+                        id="college"
+                        name="college"
+                        value={formData.college}
+                        onChange={handleChange}
+                        placeholder="Your College Name"
+                        required
+                        className="mt-1 block w-full px-4 py-3 bg-tronix-dark border border-gray-600 rounded-lg text-white focus:ring-tronix-primary focus:border-tronix-primary transition duration-200"
+                    />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                    <div>
+                        <label htmlFor="branch" className="block text-sm font-medium text-gray-300">Branch</label>
+                        <input
+                            type="text"
+                            id="branch"
+                            name="branch"
+                            value={formData.branch}
+                            onChange={handleChange}
+                            placeholder="e.g. ECE/CSE"
+                            required
+                            className="mt-1 block w-full px-4 py-3 bg-tronix-dark border border-gray-600 rounded-lg text-white focus:ring-tronix-primary focus:border-tronix-primary transition duration-200"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="year" className="block text-sm font-medium text-gray-300">Year of Study</label>
+                        <select
+                            id="year"
+                            name="year"
+                            value={formData.year}
+                            onChange={handleChange}
+                            required
+                            className="mt-1 block w-full px-4 py-3 bg-tronix-dark border border-gray-600 rounded-lg text-white focus:ring-tronix-primary focus:border-tronix-primary transition duration-200"
+                        >
+                            <option value="">Select Year</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                            <option value="Graduate">Graduate</option>
+                        </select>
+                    </div>
                 </div>
                 <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-300">Your College / Query (Optional)</label>

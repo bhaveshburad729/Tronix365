@@ -14,7 +14,7 @@ def get_seats(db: Session = Depends(get_db)):
     seat = db.query(Seat).first()
     if not seat:
         # Initialize default
-        seat = Seat()
+        seat = Seat(total_seats=150, available_seats=150)
         db.add(seat)
         db.commit()
         db.refresh(seat)
@@ -23,7 +23,7 @@ def get_seats(db: Session = Depends(get_db)):
         "total_seats": seat.total_seats,
         "booked_seats": seat.booked_seats,
         "available_seats": seat.available_seats,
-        "early_bird_available": seat.early_bird_seats - seat.early_bird_taken
+        "early_bird_available": 0 # Removed early bird
     }
 
 @router.get("/stream")
